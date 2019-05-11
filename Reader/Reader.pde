@@ -1,4 +1,4 @@
-String[] curves = {"moon1.txt", "moon2.txt", "moon3.txt", "moon4.txt", "terrain1.txt", "terrain2.txt", "terrain3.txt", "terrain4.txt", "terrain5.txt", "terrain6.txt", "terrain7.txt", "wind1.txt", "wind2.txt", "wind3.txt", "wind4.txt", "wind5.txt", "wind6.txt", "wind7.txt", "wind8.txt", "wind9.txt", "wind10.txt", "wind11.txt", "wind12.txt", "wind13.txt", "wind14.txt", "wind15.txt"};
+String[] curves = {"star1.txt", "star2.txt", "star3.txt", "star4.txt", "moon1.txt", "moon2.txt", "moon3.txt", "moon4.txt", "wind1.txt", "wind2.txt", "wind3.txt", "wind4.txt", "wind5.txt", "wind6.txt", "wind7.txt", "wind8.txt", "wind9.txt", "wind10.txt", "wind11.txt", "wind12.txt", "wind13.txt", "wind14.txt", "wind15.txt", "terrain1.txt", "terrain2.txt", "terrain3.txt", "terrain4.txt", "terrain5.txt", "terrain6.txt", "terrain7.txt"};
 color[] colors = new color[curves.length];
 
 ArrayList<ArrayList<PVector>> curveVectors = new ArrayList<ArrayList<PVector>>();
@@ -72,7 +72,9 @@ void parseFiles(String[] files) {
 }
 
 void mouseReleased() {
-  output.flush();
-  output.close();
-  exit();
+  if (output != null) {
+    output.flush();
+    output.close();
+    exit();
+  }
 }
